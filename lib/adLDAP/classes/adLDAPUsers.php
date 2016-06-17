@@ -224,7 +224,7 @@ class adLDAPUsers {
         }
         $filter = "(&(objectCategory=person)({$filter}))";
         if ($fields === NULL) { 
-            $fields = array("samaccountname","mail","memberof","department","displayname","telephonenumber","primarygroupid","objectsid"); 
+        $fields = array("samaccountname","mail","memberof","department","displayname","telephonenumber","primarygroupid","objectsid","ipPhone"); 
         }
         if (!in_array("objectsid", $fields)) {
             $fields[] = "objectsid";
