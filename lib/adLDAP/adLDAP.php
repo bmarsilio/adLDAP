@@ -936,8 +936,11 @@ class adLDAP {
                 }
             }
         }
-        if ($encode === true && $key != 'password') {
-            $item = utf8_encode($item);   
+	    
+	if (is_string($item) && $key != 'password') {
+            if (mb_detect_encoding($item, 'UTF-8', true) === false) {
+                $item = utf8_encode($item);
+            }
         }
     }
     
